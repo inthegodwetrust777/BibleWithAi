@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    .ad {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Advertisement</h1>
+  <p>You will be redirected shortly...</p>
+  <div class="ad">
+    <!-- Place your ad content here -->
+    <img src="your-ad-image.jpg" alt="Ad" />
+    <p>Support our website by checking this out!</p>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const redirectUrl = params.get('redirect');
+    setTimeout(() => {
+      window.location.href = redirectUrl;
+    }, 4000);
+  </script>
+</body>
+</html>
