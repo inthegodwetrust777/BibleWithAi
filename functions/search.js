@@ -1,5 +1,5 @@
 const { OpenAI } = require('openai');
-
+console.log(process.env.OPENAI_API_KEY)
 module.exports = async (req, res) => {
   const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY, // This will reference the environment variable
