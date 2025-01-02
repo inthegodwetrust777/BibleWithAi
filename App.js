@@ -8,7 +8,7 @@ function App() {
 
   const handleSearch = async () => {
     try {
-      const vercelUrl = process.env.VERCEL_URL || 'https://bible-with-p6o4tpk4b-inthegodwetrusts-projects.vercel.app/'; // replace with your actual Vercel URL
+      const vercelUrl = process.env.VERCEL_URL || 'https://bible-with-ai-git-main-inthegodwetrusts-projects.vercel.app/'; // replace with your actual Vercel URL
       const response = await fetch(`${vercelUrl}/api/search`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
