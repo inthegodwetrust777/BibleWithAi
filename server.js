@@ -1,20 +1,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const axios = require('axios');
-const { OpenAI } = require('openai'); // It is 
+const { OpenAI } = require('openai'); // Ensure only one import of OpenAI
 
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const { OpenAI } = require('openai');
-
-// Ensure that you're using the environment variable correctly
+// Initialize OpenAI with environment variable
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY, // This will reference the environment variable
 });
-
 
 // Search Bible verses
 app.post('/api/search', async (req, res) => {
@@ -25,7 +21,7 @@ app.post('/api/search', async (req, res) => {
       model: 'gpt-3.5-turbo',
       messages: [
         { role: 'system', content: 'You are a Bible search assistant.' },
-        { role: 'user', content: `Find Bible verses related to: "${query}".` },
+        { role: 'user', content: `Find Bible verses related to: "${query}" and also give a response addressing if they mention emotion.` },
       ],
     });
 
@@ -37,3 +33,5 @@ app.post('/api/search', async (req, res) => {
   }
 });
 
+const PORT = 3001;
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
