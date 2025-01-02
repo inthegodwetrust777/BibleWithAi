@@ -7,10 +7,14 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+console.log(process.env.OPENAI_API_KEY); // Add this temporarily to check
+
+
 // Initialize OpenAI with environment variable
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY, // This will reference the environment variable
 });
+
 // Search Bible verses
 app.post('/api/search', async (req, res) => {
   const { query } = req.body;
