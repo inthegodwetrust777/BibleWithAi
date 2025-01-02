@@ -8,8 +8,11 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+const { OpenAI } = require('openai');
+
+// Ensure that you're using the environment variable correctly
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY, // HIDING IT FROM YOU XD
+  apiKey: process.env.OPENAI_API_KEY, // This will reference the environment variable
 });
 
 

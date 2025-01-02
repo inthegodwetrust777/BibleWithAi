@@ -17,3 +17,4 @@ yarn-error.log
 
 # Ignore system-specific files
 .DS_Store
+.vercel
