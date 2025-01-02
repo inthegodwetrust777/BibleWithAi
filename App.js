@@ -8,11 +8,13 @@ function App() {
 
   const handleSearch = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/search', {
+      const vercelUrl = process.env.VERCEL_URL || 'https://bible-with-p6o4tpk4b-inthegodwetrusts-projects.vercel.app/'; // replace with your actual Vercel URL
+      const response = await fetch(`${vercelUrl}/api/search`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: searchQuery }),
       });
+  
       const data = await response.json();
       if (data.success) {
         setSearchResults(data.results);
@@ -20,9 +22,11 @@ function App() {
         setSearchResults('No results found.');
       }
     } catch (error) {
+      console.error('Error fetching search results:', error);
       setSearchResults('Error fetching results. Please try again.');
     }
   };
+  
 
   const fetchDailyQuote = async () => {
     try {
