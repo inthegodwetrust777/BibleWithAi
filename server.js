@@ -9,8 +9,9 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY, // This will reference the environment variable
+  apiKey: process.env.OPENAI_API_KEY, // This is safe and secure
 });
+
 
 // Search Bible verses
 app.post('/api/search', async (req, res) => {
