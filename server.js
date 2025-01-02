@@ -2,14 +2,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const axios = require('axios');
-const { OpenAI } = require('openai'); // Ensure OpenAI module is installed
+const { OpenAI } = require('openai'); // It is 
 
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY, // This is safe and secure
+  apiKey: process.env.OPENAI_API_KEY, // HIDING IT FROM YOU XD
 });
 
 

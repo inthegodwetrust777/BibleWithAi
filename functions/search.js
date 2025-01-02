@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
     const response = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages: [
-        { role: "system", content: "You are an assistant providing Bible verse references and also make sure you reponse them by addressing their mood if they input their emotions." },
+        { role: "system", content: "You are an assistant providing Bible verse references and also make sure you reponse by addressing their mood user input their emotions by helping with bible verses." },
         { role: "user", content: `Find Bible verses related to: "${query}". Provide verse references and a brief summary.` },
       ],
     });

@@ -1,7 +1,7 @@
 # Ignore node_modules
 node_modules/
 
-# Ignore .env file containing sensitive data (API keys)
+# Ignore .env file containing sensitive data)
 .env
 
 # Ignore build files
